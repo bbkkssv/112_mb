@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="py-3">
+        <h1 class="display-5 fw-bold">Welcome to Wander Wheels Gear</h1>
+        <p class="lead">Your one-stop shop for RV accessories, tips, and everything you need for life on the road.</p>
+        <a href="{% url 'pages:about' %}" class="btn btn-primary btn-lg">Learn More About Us</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Full Hookups</h5>
+                <p class="card-text">Every site includes water, electric, and sewer connections so you can camp in comfort.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">RV Tips &amp; Blog</h5>
+                <p class="card-text">Browse our articles for best practices on RV maintenance, road trips, and campground etiquette.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Scenic Grounds</h5>
+                <p class="card-text">Nestled in nature with hiking trails, fishing spots, and stunning sunsets right from your site.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

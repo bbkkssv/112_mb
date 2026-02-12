@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="display-6 fw-bold mb-3">About Wander Wheels Gear</h1>
+        <hr>
+        <p class="lead">We're a family-run RV accessories brand dedicated to making your time on the road comfortable, memorable, and stress-free.</p>
+        <p>Whether you're a seasoned full-timer or just getting started with RV life, Wander Wheels Gear has you covered. We offer top-quality accessories, expert advice, and a welcoming community of fellow RVers.</p>
+        <p>We also publish regular blog articles packed with tips and best practices — from winterizing your rig to finding the best routes across the country. Our goal is to help every camper get the most out of life on the road.</p>
+        <a href="{% url 'pages:home' %}" class="btn btn-outline-primary mt-2">Back to Home</a>
+    </div>
+</div>
+{% endblock %}
