@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="display-6 fw-bold mb-3">Posts</h1>
+        <hr>
+        {% for post in post_list %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ post.subtitle }}</h6>
+                <p class="card-text">{{ post.body|truncatewords:30 }}</p>
+                <small class="text-muted">By {{ post.author }} | {{ post.created_on }}</small>
+            </div>
+        </div>
+        {% empty %}
+        <p>No posts yet.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
