@@ -1,18 +1,26 @@
 {% extends 'base.html' %}
 
-{% block title %}
-    Posts
-{% endblock %}
+{% block title %}Posts{% endblock %}
 
 {% block content %}
-    <h1>Posts</h1>
-    <ul>
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="display-6 fw-bold mb-3">Posts</h1>
+        <hr>
         {% for item in posts %}
-            <li>
-                <h1>Title: {{ item.title }}</h1>
-                <p>Body: {{ item.body|truncatechars:5 }}</p>
-                <a href="#">Continue reading...</a>
-            </li>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ item.subtitle }}</h6>
+                <p class="card-text">{{ item.body|truncatechars:100 }}</p>
+                <small class="text-muted">By {{ item.author }} | {{ item.created_on }}</small>
+                <br>
+                <a href="{% url 'posts:post_detail' item.id %}" class="btn btn-outline-primary btn-sm mt-2">Continue reading...</a>
+            </div>
+        </div>
+        {% empty %}
+        <p class="lead">No posts yet.</p>
         {% endfor %}
-    </ul>
+    </div>
+</div>
 {% endblock %}
